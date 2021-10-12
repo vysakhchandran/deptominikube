@@ -14,11 +14,15 @@ class TestApp(unittest.TestCase):
         statuscode = response.status_code
         self.assertEqual(statuscode, 200)
 
-
     def test_response_type(self):
         tester = app.app.test_client(self)
         response = tester.get('/tree')
         self.assertEqual(response.content_type,"application/json")
+
+    def test_response_data(self):
+        tester = app.app.test_client(self)
+        response = tester.get('/tree')    
+        self.assertTrue(b'myFavouriteTree' in response.data)
 
 
 
