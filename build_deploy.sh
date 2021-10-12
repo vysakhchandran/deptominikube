@@ -8,5 +8,6 @@ echo "Starting deployments on k8 cluster........."
 kubectl apply -f https://raw.githubusercontent.com/vysakhchandran/deptominikube/main/flask-api-deployment.yaml
 echo "Deploymet completed with success."
 kubectl get pods
-sleep 5
+echo "Awaiting Ingress IP to be assigned...."
+sleep 20
 kubectl get ingress 
