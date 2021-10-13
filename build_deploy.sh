@@ -20,12 +20,12 @@ echo "`kubectl get ingress | grep -oE '((1?[0-9][0-9]?|2[0-4][0-9]|25[0-5])\.){3
 if [ -f /private/etc/hosts ]; then
 echo "Detected Mac Os updating host file....."
 sudo sed -i.bak '/local.ecosia.org/d' /private/etc/hosts
-echo "`kubectl get ingress | grep -oE '((1?[0-9][0-9]?|2[0-4][0-9]|25[0-5])\.){3}(1?[0-9][0-9]?|2[0-4][0-9]|25[0-5])'` local.ecosia.org" | sudo tee /private/etc/hosts
+echo "`kubectl get ingress | grep -oE '((1?[0-9][0-9]?|2[0-4][0-9]|25[0-5])\.){3}(1?[0-9][0-9]?|2[0-4][0-9]|25[0-5])'` local.ecosia.org" | sudo tee -a /private/etc/hosts > /dev/null
 fi
 
 if [ -f /etc/hosts ]; then
 sudo sed -i.bak '/local.ecosia.org/d' /etc/hosts
-echo "`kubectl get ingress | grep -oE '((1?[0-9][0-9]?|2[0-4][0-9]|25[0-5])\.){3}(1?[0-9][0-9]?|2[0-4][0-9]|25[0-5])'` local.ecosia.org" | sudo tee /etc/hosts
+echo "`kubectl get ingress | grep -oE '((1?[0-9][0-9]?|2[0-4][0-9]|25[0-5])\.){3}(1?[0-9][0-9]?|2[0-4][0-9]|25[0-5])'` local.ecosia.org" | sudo tee -a /etc/hosts > /dev/null
 fi
-echo "endpoint is now available at http;//local.ecosia.org/tree"
+echo "endpoint is now available at http://local.ecosia.org/tree"
 curl local.ecosia.org/tree
