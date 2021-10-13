@@ -6,7 +6,7 @@ echo "Starting image build......................."
 minikube ssh -- docker build -t flask_api_server /home/docker/app/ 
 echo "Enabling local ingress for minikube........ "
 minikube addons enable ingress
-sleeo 5
+sleep 5
 echo "Starting deployments on k8 cluster........."
 kubectl apply -f flask-api-deployment.yaml
 echo "Deploymet completed with success."
