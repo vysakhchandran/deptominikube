@@ -1,4 +1,4 @@
-# Flask API server Automati deployment in minikube 
+# Flask API server Automatic deployment in minikube 
 
 Requirments
 ---------------------------
