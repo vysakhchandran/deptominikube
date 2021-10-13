@@ -24,14 +24,18 @@ Assumptions
 
 How to run 
 ---------------------
+```
 1. Step 1: git clone git@github.com:vysakhchandran/deptominikube.git
 2. step 2: cd deptominikube
 3. step 3: /bin/bash build_deploy.sh 
 4. step 4: provide sudo password when prompted to automatically update to hosts file or ctr+c to terminate the program and manually place the entry. 
 5. step 5: curl http://local.ecosia.org/tree to access the entry point. 
+```
 
 Log Capure from my run
 --------------------
+```
+
 ➜  deptominikube git:(main) ✗ minikube delete;minikube start;bash build_deploy.sh
 🙄  "minikube" profile does not exist, trying anyways.
 💀  Removed all traces of the "minikube" cluster.
@@ -155,3 +159,4 @@ endpoint is now available at http://local.ecosia.org/tree
 {
   "myFavouriteTree": "Tree1"
 }
+```
