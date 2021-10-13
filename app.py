@@ -1,9 +1,9 @@
-from flask import Flask,json
+from flask import Flask,jsonify
 app = Flask(__name__)
 
 @app.route('/tree', methods=['GET'])
 def apiserver():
-    return json.dumps({"myFavouriteTree":"Tree1"})
+    return jsonify({"myFavouriteTree":"Tree1"})
 
 
 if __name__ == '__main__':
